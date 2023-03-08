@@ -1,4 +1,7 @@
 {
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -14,7 +17,9 @@
     "target/**": true
   },
   "ltex.disabledRules": {
-    "en-US": ["MORFOLOGIK_RULE_EN_US"]
+    "en-US": [
+      "MORFOLOGIK_RULE_EN_US"
+    ]
   },
   "markdownlint.config": {
     "MD013": false,
