@@ -32,7 +32,7 @@ export default function Home(): JSX.Element {
             <div className="row">
               {HIGHLIGHTS.map(({ title, description }) => (
                 <div key={title} className={clsx("col col--4")}>
-                  <div className="text--center padding-horiz--md">
+                  <div className="text--left padding-horiz--md">
                     <h3>{title}</h3>
                     <p>{description}</p>
                   </div>
@@ -75,8 +75,7 @@ const HIGHLIGHTS: {
     description: (
       <>
         Capi's approach to composition ("Rune") enables the creation of
-        high-level pattern libraries to abstract over the nuance of chain
-        primitives and protocols.
+        high-level pattern libraries, which abstract over complex protocols.
       </>
     ),
   },

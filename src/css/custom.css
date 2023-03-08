@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 :root {
   --ifm-color-primary: #7e5bef;
   --ifm-color-primary-dark: #7e5bef;
@@ -30,5 +32,9 @@
 }
 
 .pagination-nav__link {
+  border-radius: 0.25rem;
+}
+
+.button--secondary {
   border-radius: 0.25rem;
 }
