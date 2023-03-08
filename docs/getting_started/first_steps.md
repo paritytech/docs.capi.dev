@@ -7,11 +7,11 @@ and successful.
 First let's bring in the imports of which we'll be making use.
 
 ```ts
-import { alice, bob, ValueRune } from "capi";
+import { alice, bob, ValueRune } from "capi"
 import {
   Balances,
   System,
-} from "http://localhost:4646/frame/dev/polkadot/@latest/mod.ts";
+} from "http://localhost:4646/frame/dev/polkadot/@latest/mod.ts"
 ```
 
 - `alice` and `bob` are our test users, between whom the transaction will take
@@ -26,7 +26,7 @@ We use the `Balances.transfer` factory to create the submittable call data.
 Balances.transfer({
   value: 12345n,
   dest: bob.address,
-});
+})
 ```
 
 Next, we sign the transaction with `alice`.
@@ -95,11 +95,11 @@ Great! We've built up a description of the desired execution. Let's run it.
 Altogether, our example looks as follows.
 
 ```ts
-import { alice, bob, ValueRune } from "capi";
+import { alice, bob, ValueRune } from "capi"
 import {
   Balances,
   System,
-} from "http://localhost:4646/frame/dev/polkadot/@latest/mod.ts";
+} from "http://localhost:4646/frame/dev/polkadot/@latest/mod.ts"
 
 await Balances.transfer({
   value: 12345n,
@@ -111,7 +111,7 @@ await Balances.transfer({
   .finalized()
   .into(ValueRune)
   .chain(() => System.Account.value(bob.publicKey).dbg())
-  .run();
+  .run()
 ```
 
 Upon running this script, we should see three transaction statuses (`ready`,

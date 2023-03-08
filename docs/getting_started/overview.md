@@ -56,11 +56,11 @@ block from the `Timestamp` pallet.
 `main.ts`
 
 ```ts
-import { Timestamp } from "http://localhost:4646/frame/dev/polkadot/@latest/mod.js";
+import { Timestamp } from "http://localhost:4646/frame/dev/polkadot/@latest/mod.js"
 
-const time = await Timestamp.Now.run();
+const time = await Timestamp.Now.run()
 
-console.log(time);
+console.log(time)
 ```
 
 > Note: we can use import maps to simplify import specifiers

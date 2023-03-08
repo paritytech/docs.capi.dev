@@ -19,7 +19,7 @@
 
 .features {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding: 8rem 0;
   width: 100%;
 }
