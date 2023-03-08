@@ -1,0 +1,17 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "target/**": true
+  },
+  "ltex.disabledRules": {
+    "en-US": ["MORFOLOGIK_RULE_EN_US"]
+  },
+  "markdownlint.config": {
+    "MD013": false,
+    "MD033": false
+  }
+}
