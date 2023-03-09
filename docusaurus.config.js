@@ -7,7 +7,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/vsDark")
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "WIP Capi Docs",
+  title: "Capi Docs",
   tagline: "A framework for crafting interactions with Substrate chains",
   favicon: "img/favicon.ico",
   url: "https://docs.capi.dev",
@@ -53,7 +53,7 @@ const config = {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "WIP Capi Docs",
+        title: "Capi Docs",
         logo: {
           alt: "Capi Logo",
           src: "img/logo.svg",
