@@ -49,35 +49,35 @@ const config = {
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+    {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "Capi Docs",
+        title: "WIP Capi Docs",
         logo: {
           alt: "Capi Logo",
           src: "img/logo.svg",
         },
-        items: [
-          {
-            type: "doc",
-            docId: "introduction",
-            position: "left",
-            label: "Docs",
-          },
-          { to: "/blog", label: "Blog", position: "left" },
-          {
-            href: "https://github.com/paritytech/capi",
-            label: "GitHub",
-            position: "right",
-          },
-        ],
+        items: [{
+          type: "doc",
+          docId: "introduction",
+          position: "left",
+          label: "Docs",
+        }, {
+          to: "/blog",
+          label: "Blog",
+          position: "left",
+        }, {
+          href: "https://github.com/paritytech/capi",
+          label: "GitHub",
+          position: "right",
+        }],
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-    }),
+    },
 }
 
 module.exports = config
