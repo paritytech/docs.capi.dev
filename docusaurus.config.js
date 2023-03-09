@@ -2,11 +2,12 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require("prism-react-renderer/themes/github")
-const darkCodeTheme = require("prism-react-renderer/themes/dracula")
+const darkCodeTheme = require("prism-react-renderer/themes/vsDark")
+// oceanicNext
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Capi Docs",
+  title: "WIP Capi Docs",
   tagline: "A framework for crafting interactions with Substrate chains",
   favicon: "img/favicon.ico",
   url: "https://docs.capi.dev",
@@ -40,7 +41,7 @@ const config = {
           editUrl: "https://github.com/paritytech/capi.dev/tree/main/blog/",
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: require.resolve("./src/custom.css"),
         },
       }),
     ],
