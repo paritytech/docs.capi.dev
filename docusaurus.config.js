@@ -2,11 +2,12 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require("prism-react-renderer/themes/github")
-const darkCodeTheme = require("prism-react-renderer/themes/dracula")
+const darkCodeTheme = require("prism-react-renderer/themes/vsDark")
+// oceanicNext
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Capi Docs",
+  title: "WIP Capi Docs",
   tagline: "A framework for crafting interactions with Substrate chains",
   favicon: "img/favicon.ico",
   url: "https://docs.capi.dev",
@@ -40,7 +41,7 @@ const config = {
           editUrl: "https://github.com/paritytech/capi.dev/tree/main/blog/",
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: require.resolve("./src/custom.css"),
         },
       }),
     ],
@@ -48,35 +49,35 @@ const config = {
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+    {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "Capi Docs",
+        title: "WIP Capi Docs",
         logo: {
           alt: "Capi Logo",
           src: "img/logo.svg",
         },
-        items: [
-          {
-            type: "doc",
-            docId: "introduction",
-            position: "left",
-            label: "Docs",
-          },
-          { to: "/blog", label: "Blog", position: "left" },
-          {
-            href: "https://github.com/paritytech/capi",
-            label: "GitHub",
-            position: "right",
-          },
-        ],
+        items: [{
+          type: "doc",
+          docId: "introduction",
+          position: "left",
+          label: "Docs",
+        }, {
+          to: "/blog",
+          label: "Blog",
+          position: "left",
+        }, {
+          href: "https://github.com/paritytech/capi",
+          label: "GitHub",
+          position: "right",
+        }],
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-    }),
+    },
 }
 
 module.exports = config
