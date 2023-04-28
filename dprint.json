@@ -11,7 +11,7 @@
     "lineWidth": 80,
     "textWrap": "always"
   },
-  "includes": ["**.{js,json,md,ts,tsx}"],
+  "includes": ["**.{js,json,jsonc,md,ts,tsx}"],
   "excludes": [".docusaurus", "build", "node_modules"],
   "plugins": [
     "https://plugins.dprint.dev/json-0.17.0.wasm",
