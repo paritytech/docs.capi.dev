@@ -57,3 +57,8 @@
   content: "Under Construction";
   color: #f1c40f;
 }
+
+.main-wrapper
+  header {
+  display: none;
+}

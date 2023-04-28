@@ -16,6 +16,7 @@ const sidebars = {
         "getting_started/import_mapping",
       ],
     },
+    ...require("./docs/example_sidebar_items.json"),
   ],
 }
 
