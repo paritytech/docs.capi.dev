@@ -10,12 +10,13 @@ const sidebars = {
         id: "setup/index",
       },
       items: [
-    "setup/development",
-    "setup/build_tool_integration",
-    "setup/nets",
+        "setup/development",
+        "setup/build_tool_integration",
+        "setup/nets",
       ],
     },
-    { type: "category",
+    {
+      type: "category",
       label: "Basics",
       link: { type: "doc", id: "basics/index" },
       items: [
@@ -23,9 +24,18 @@ const sidebars = {
         "basics/blocks",
         "basics/storage",
         "basics/extrinsics",
-      ]
-  },
+      ],
+    },
     "types",
+    {
+      type: "category",
+      label: "Rune",
+      items: [
+        "rune/introduction",
+        "rune/subclasses",
+        "rune/rxjs",
+      ],
+    },
   ],
 }
 
