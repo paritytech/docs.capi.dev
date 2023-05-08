@@ -3,28 +3,23 @@ import * as path from "https://deno.land/std@0.185.0/path/mod.ts"
 import { description, title, toMarkdown } from "https://deno.land/x/egts@v0.1.0-beta.3/mod.ts"
 
 const clonePath = new URL("capi", import.meta.url)
-try {
-  await Deno.remove(clonePath, { recursive: true })
-  // deno-lint-ignore no-empty
-} catch (_) {}
-await Deno.mkdir(clonePath)
-await new Deno.Command("git", {
-  args: ["init"],
-  cwd: clonePath,
-}).output()
-await new Deno.Command("git", {
-  args: ["remote", "add", "-f", "origin", "git@github.com:paritytech/capi.git"],
-  cwd: clonePath,
-}).output()
-await new Deno.Command("git", {
-  args: ["config", "core.sparseCheckout", "true"],
-  cwd: clonePath,
-}).spawn().output()
+await fs.emptyDir(clonePath)
+await [
+  ["init"],
+  ["remote", "add", "-f", "origin", "git@github.com:paritytech/capi.git"],
+  ["config", "core.sparseCheckout", "true"],
+].reduce(async (acc, args) => {
+  await acc
+  await new Deno.Command("git", {
+    args,
+    cwd: clonePath,
+  }).output()
+}, Promise.resolve())
 await Deno.writeTextFile(path.join(clonePath.pathname, ".git/info/sparse-checkout"), "examples/")
 await new Deno.Command("git", {
   args: ["pull", "origin", "main"],
   cwd: clonePath,
-}).spawn().output()
+}).output()
 
 const examplesDir = path.join(clonePath.pathname, "examples")
 const exampleMdsDir = new URL("../docs/examples/", import.meta.url).pathname
