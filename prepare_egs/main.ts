@@ -4,21 +4,26 @@ import { description, title, toMarkdown } from "https://deno.land/x/egts@v0.1.0-
 
 const clonePath = new URL("capi", import.meta.url)
 await fs.emptyDir(clonePath)
-await [
-  ["init"],
-  ["remote", "add", "-f", "origin", "git@github.com:paritytech/capi.git"],
-  ["config", "core.sparseCheckout", "true"],
-].reduce(async (acc, args) => {
-  await acc
+for (
+  const args of [
+    ["init"],
+    ["remote", "add", "-f", "origin", "https://github.com/paritytech/capi.git"],
+    ["config", "core.sparseCheckout", "true"],
+  ]
+) {
   await new Deno.Command("git", {
     args,
     cwd: clonePath,
+    stdout: "inherit",
+    stderr: "inherit",
   }).output()
-}, Promise.resolve())
+}
 await Deno.writeTextFile(path.join(clonePath.pathname, ".git/info/sparse-checkout"), "examples/")
 await new Deno.Command("git", {
   args: ["pull", "origin", "main"],
   cwd: clonePath,
+  stdout: "inherit",
+  stderr: "inherit",
 }).output()
 
 const examplesDir = path.join(clonePath.pathname, "examples")
