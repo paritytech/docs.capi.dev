@@ -16,6 +16,13 @@ const sidebars = {
         "getting_started/import_mapping",
       ],
     },
+    {
+      type: "category",
+      label: "Rune",
+      items: [
+        "rune/introduction",
+      ],
+    },
   ],
 }
 
