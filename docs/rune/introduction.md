@@ -4,7 +4,7 @@ Rune is the basis for Capi's fluent query builder API.
 
 ## Why?
 
-Rune is necessary for obtaining correct results when working with multiple
+Rune facilitates obtaining correct results when working with multiple
 interrelated subscriptions, which arise from cross-chain interactions.
 
 Additionally, Rune abstracts away how queries are executed, allowing developers
@@ -77,7 +77,7 @@ const time = polkadot.Timestamp.Now.value(undefined, blockHash)
 //   The `undefined` corresponds to the storage key.
 //   Because `Now` is a storage item (not a storage map), its only key is `undefined`.
 //   Before, since the key was omitted, it was implicitly `undefined`.
-//   Now, we have to explicitly specify it, in order to specify the block hash.
+//   Now, we have to explicitly specify it, in order to specify the second argument (the block hash).
 
 console.log(await time.run()) // 1683556218000n
 ```
