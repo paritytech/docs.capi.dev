@@ -1,34 +1,4 @@
-# Runic Ruminations
-
-## A Rune by Any Other Name
-
-Runes are the fundamental unit of composition in Rune, Capi's effect system.
-Runes can be compared to many things, and they are, in a sense, a combination of
-effects, futures, observables, and signals. But they are not simply any one of
-these things, and so calling a rune instead an effect or an observable would
-ultimately do little more than confuse.
-
-Arguably, runes are a kind of effect, a generalization of futures, and a
-combination of observables and signals. If one had to pick a descriptive name
-for runes, "future observable effect" might be most apt. But such a phrase would
-be a mouthful, and the acronym thereof would be needlessly hostile.
-
-For lack of a descriptive name, thus, we must choose a name unburdened with
-technical meaning. For this we select "Rune"[^1], a name with apt mystical
-connotations as well as an amusing backronym of sorts – "**run e**ffect".
-
-## It's Super `Effect`ive!
-
-Rune can be seen as an effect system and the natural name for the primary type
-in such a system is an "effect". However, the term "effect" is loaded with much
-connotation but little concrete meaning. The best definition for "effect" that I
-know of is that an effect is an instance of a particular monad[^2]. Which monad,
-though, varies greatly. Most effect systems use a variation on a `Future` for
-this monad. Rune, however, uses a variation on a `Stream` – in particular, a
-rune can asynchronously resolve to multiple values. As such, runes have rather
-different semantics from futures and therefore most effects. Thus, even though
-calling a rune an effect would not be inaccurate, it would mislead those already
-familiar with effects – and be of no use to those unfamiliar.
+# Comparison to RxJS
 
 ## Runes of a Feather Update Together
 
@@ -71,8 +41,8 @@ az.subscribe((value) => {
 ```
 
 ```ts
+import { Rune, Scope } from "capi"
 import { delay } from "https://deno.land/std@0.127.0/async/mod.ts"
-import { Rune } from "./mod.ts"
 
 // Some kind of event source; this might correspond to, say, new blocks from a given chain
 const a = timer(1000).map((n) => `a${n}`) // a0, a1, a2, ...
@@ -85,7 +55,7 @@ const ay = a.map((value) => delay(500).then(() => `${value}.y`)) // a0.y, a1.y, 
 const az = Rune.tuple([ax, ay])
 
 const start = Date.now()
-for await (const value of az.iter()) {
+for await (const value of az.iter(new Scope())) {
   console.log(Date.now() - start, value)
 }
 
@@ -172,8 +142,8 @@ ab2.subscribe((value) => {
 ```
 
 ```ts
+import { Rune, Scope } from "capi"
 import { delay } from "https://deno.land/std@0.127.0/async/mod.ts"
-import { Rune } from "./mod.ts"
 
 const a = timer(1000).map((n) => `a${n}`) // a0, a1, a2, ...
 const b = timer(1500).map((n) => `b${n}`) // b0, b1, b2, ...
@@ -298,8 +268,8 @@ differently depending on it it's `b` updating (in which case it should be like
 However, this works implicitly in rune:
 
 ```ts
+import { Rune, Scope } from "capi"
 import { delay } from "https://deno.land/std@0.127.0/async/mod.ts"
-import { Rune } from "./mod.ts"
 
 const a = timer(1000).map((n) => `a${n}`) // a0, a1, a2, ...
 const b = timer(1500).map((n) => `b${n}`) // b0, b1, b2, ...
@@ -312,7 +282,7 @@ const bc = Rune.tuple([b, c])
 const allTogetherNow = Rune.tuple([ab, bc])
 
 const start = Date.now()
-for await (const value of allTogetherNow.iter()) {
+for await (const value of allTogetherNow.iter(new Scope())) {
   console.log(Date.now() - start, value)
 }
 
@@ -345,16 +315,3 @@ All of these examples work correctly in Rune because Rune essentially tracks the
 "source" of each update, and so it can know if two updates are correlated or
 not. In this way, a rune is similar to a signal like in SolidJS, except that
 runes can be asynchronous.
-
-[^1]: It is worth noting that "Rune" is not _entirely_ devoid of technical
-meaning – it is both the name of an experimental programming language, and the
-name of the character type in Go. But neither of these uses are ubiquitous, and
-they're both used in rather different contexts from our use; the former is, of
-course, a programming language, not a type, and though the latter is a type, it
-is not generic, and thus very plainly a different concept.
-
-[^2]: ["Monads for the Rest of Us"][monads4all] is an excellent, JS-based
-explanation of monads and describes how monads can be useful even outside of
-functional languages.
-
-[monads4all]: https://gist.github.com/fatcerberus/beae4d15842071eab24fca2f0740c2ef

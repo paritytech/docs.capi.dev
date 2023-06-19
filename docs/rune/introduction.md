@@ -16,12 +16,15 @@ A rune can be created from a value, resulting in a `ValueRune`. The rune can
 then be `.run()` to retrieve the original value.
 
 ```ts
-import { Rune } from "capi"
+import { Rune, Scope } from "capi"
 
 const myRune = Rune.constant(123)
 // myRune: ValueRune<number>
 
-const myValue = await myRune.run()
+// Runes execute in scopes, which control caching/memoization behavior.
+const scope = new Scope()
+
+const myValue = await myRune.run(scope) // the `.run()` method takes a scope argument
 console.log(myValue) // 123
 ```
 
@@ -29,7 +32,7 @@ A rune can also be created from a function, which results in a `FnRune`. Runes
 are inherently lazy – they don't do anything until you `.run()` them.
 
 ```ts
-import { Rune } from "capi"
+import { Rune, Scope } from "capi"
 
 const printAndAdd = Rune.fn((a, b) => {
   console.log(a + b)
@@ -39,12 +42,15 @@ const printAndAdd = Rune.fn((a, b) => {
 const printThree = printAndAdd.call(1, 2) // no console output
 // printThree: ValueRune<void>
 
-await printThree.run() // 3
+await printThree.run(new Scope()) // 3
+// (For brevity in these examples, we inline the scope argument.)
 ```
 
 ## An Interesting Example
 
 ```ts
+import { Scope } from "capi"
+
 import { polkadot } from "@capi/polkadot"
 // polkadot: ChainRune
 
@@ -61,13 +67,14 @@ const time = polkadot.Timestamp.Now.value()
 //   A regular JS `number` is not large enough to store all 64-bit integers.
 //   Thus, in JS, it is a `bigint`.
 
-console.log(await time.run()) // 1683481710000n (for example)
+console.log(await time.run(new Scope())) // 1683481710000n (for example)
 ```
 
 We can also get the timestamp at a specific block hash:
 
 ```ts
 import { polkadot } from "@capi/polkadot"
+import { Scope } from "capi"
 
 const blockHash =
   "0x0fb7fb31a01c7b6697d663d0040ae034e7c2d4e2a4aa7517424a8d3af2fa4135"
@@ -79,7 +86,7 @@ const time = polkadot.Timestamp.Now.value(undefined, blockHash)
 //   Before, since the key was omitted, it was implicitly `undefined`.
 //   Now, we have to explicitly specify it, in order to specify the second argument (the block hash).
 
-console.log(await time.run()) // 1683556218000n
+console.log(await time.run(new Scope())) // 1683556218000n
 ```
 
 ## Subscriptions
@@ -89,6 +96,7 @@ previous example to subscribe to the latest timestamp.
 
 ```ts
 import { polkadot } from "@capi/polkadot"
+import { Scope } from "capi"
 
 const blockHash = polkadot.latestBlockHash
 // blockHash: BlockHashRune
@@ -101,7 +109,7 @@ const time = polkadot.Timestamp.Now.value(undefined, blockHash)
 
 // We can iterate over the values of the subscription using `.iter()`.
 // `.iter()` is like `.run()` except it returns an `AsyncIterable`.
-for await (const value of time.iter()) {
+for await (const value of time.iter(new Scope())) {
   console.log(value) // This will continually print out timestamps until the script is stopped.
   // Output:
   //   1683555966001n
@@ -113,7 +121,7 @@ for await (const value of time.iter()) {
 
 ```ts
 import { polkadot } from "@capi/polkadot"
-import { Rune } from "capi"
+import { Rune, Scope } from "capi"
 
 const blockHash = polkadot.latestBlockHash
 const time = polkadot.Timestamp.Now.value(undefined, blockHash)
@@ -132,7 +140,7 @@ const blockWithTime = Rune.object({ blockHash, time })
 //   Under the hood, Capi is subscribing to the latest block, and on every new block, querying storage.
 //   These results come in at different times, but Rune ensures that they are outputted simultaneously.
 
-for await (const value of blockWithTime.iter()) {
+for await (const value of blockWithTime.iter(new Scope())) {
   console.log(value)
   // Output:
   //   {
@@ -157,6 +165,7 @@ confirm this using one of our earlier examples:
 
 ```ts
 import { polkadot } from "@capi/polkadot"
+import { Scope } from "capi"
 
 // The `blockHash` from the first object printed
 const blockHash =
@@ -165,5 +174,5 @@ const blockHash =
 const time = polkadot.Timestamp.Now.value(undefined, blockHash)
 
 // The `time` from the first object printed
-console.log(await time.run()) // 1683556218000n
+console.log(await time.run(new Scope())) // 1683556218000n
 ```

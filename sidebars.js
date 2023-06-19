@@ -21,7 +21,7 @@ const sidebars = {
       label: "Rune",
       items: [
         "rune/introduction",
-        "rune/philosophy",
+        "rune/rxjs",
       ],
     },
   ],
