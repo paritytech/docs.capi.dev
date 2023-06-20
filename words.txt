@@ -1,4 +1,12 @@
+alexa
 capi
+clsx
+easyops
 extrinsics
+paritytech
+peaceiris
+solovay
 subclassing
+sufficients
+typecheck
 unhandling

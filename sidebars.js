@@ -6,15 +6,40 @@ const sidebars = {
       id: "introduction",
     },
     {
-      type: "category",
-      label: "Getting Started",
-      items: [
-        "getting_started/overview",
-        "getting_started/setup",
-        "getting_started/server",
-        "getting_started/first_steps",
-        "getting_started/import_mapping",
-      ],
+      type: "doc",
+      id: "setup",
+    },
+    {
+      type: "doc",
+      id: "server",
+    },
+    {
+      type: "doc",
+      id: "build_tool_integration",
+    },
+    {
+      type: "doc",
+      id: "rune",
+    },
+    {
+      type: "doc",
+      id: "chain_rune",
+    },
+    {
+      type: "doc",
+      id: "types",
+    },
+    {
+      type: "doc",
+      id: "blocks",
+    },
+    {
+      type: "doc",
+      id: "storage",
+    },
+    {
+      type: "doc",
+      id: "extrinsics",
     },
   ],
 }

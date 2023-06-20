@@ -1,4 +1,0 @@
-# Extrinsics
-
-- pjs signing
-- gas

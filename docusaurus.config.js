@@ -10,12 +10,13 @@ const config = {
   title: "Capi Docs",
   tagline: "A framework for crafting interactions with Substrate chains",
   favicon: "img/favicon.ico",
-  url: "https://docs.capi.dev",
+  url: "https://docs.capi.dev/",
   baseUrl: "/",
   organizationName: "paritytech", // Usually your GitHub org/user name.
   projectName: "capi", // Usually your repo name.
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
+  noIndex: true,
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
@@ -32,16 +33,16 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/paritytech/capi.dev/tree/main/docs/",
+          editUrl: "https://github.com/paritytech/docs.capi.dev/tree/main/docs/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/paritytech/capi.dev/tree/main/blog/",
+          editUrl: "https://github.com/paritytech/docs.capi.dev/tree/main/blog/",
         },
         theme: {
-          customCss: require.resolve("./src/custom.css"),
+          customCss: require.resolve("./custom.css"),
         },
       }),
     ],
@@ -50,8 +51,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     {
-      // Replace with your project's social card
-      image: "img/docusaurus-social-card.jpg",
       navbar: {
         title: "Capi Docs",
         logo: {
@@ -64,9 +63,13 @@ const config = {
           position: "left",
           label: "Docs",
         }, {
+          href: "https://github.com/paritytech/capi/tree/main/examples",
+          label: "Examples",
+          position: "left",
+        }, {
           to: "/blog",
           label: "Blog",
-          position: "left",
+          position: "right",
         }, {
           href: "https://github.com/paritytech/capi",
           label: "GitHub",
