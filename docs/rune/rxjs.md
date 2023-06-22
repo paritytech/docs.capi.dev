@@ -280,7 +280,7 @@ However, this works implicitly in rune:
 ```ts
 /* Rune */
 
-import { Rune, Scope } from "capi"
+import { Rune } from "capi"
 import { delay } from "https://deno.land/std@0.127.0/async/mod.ts"
 
 const a = timer(1000).map((n) => `a${n}`) // a0, a1, a2, ...
