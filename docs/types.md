@@ -77,7 +77,7 @@ type E2 =
 
 ## Declarations
 
-After syncing (covered in [the setup section](/docs/setup.md)), we can access
+After syncing (covered in [the setup section](/setup)), we can access
 type-related exports from the net-specific codegen.
 
 Let's consider the example of Polkadot's `AccountInfo` type.
@@ -149,7 +149,7 @@ const J = XcmV1Junction.Parachain(1)
 ```
 
 These factories accept both resolved JS values and (unresolved) Runes (covered
-in [a previous section](/docs/rune.md)).
+in [a previous section](/basics/rune)).
 
 ```ts
 const one = Rune.constant(1)

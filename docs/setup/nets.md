@@ -155,5 +155,5 @@ export const polkadot = net.ws({
 })
 ```
 
-We'll dig into this in [the next section](/docs/server.md), where we'll cover
+We'll dig into this in [the next section](/setup/development), where we'll cover
 making use of the Capi development server.
