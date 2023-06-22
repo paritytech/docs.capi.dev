@@ -21,7 +21,7 @@ import { Rune } from "capi"
 const myRune = Rune.constant(123)
 // myRune: ValueRune<number>
 
-const myValue = await myRune.run(scope) // the `.run()` method takes a scope argument
+const myValue = await myRune.run()
 console.log(myValue) // 123
 ```
 
