@@ -1,7 +1,7 @@
 # Rune Primer
 
 Before we move any further, let's briefly touch on Rune (which we cover more in
-depth in [a later section](/rune/introduction)).
+depth in [a later section](/rune)).
 
 Rune is a novel system for modeling TypeScript APIs. Developed by the Capi core
 team, this system is geared towards enabling a wide range of capabilities

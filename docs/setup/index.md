@@ -52,7 +52,7 @@ This file is covered more in depth in [the `nets.ts` section](./nets).
 
 > Note: you can forgo this setup if your app determines target chain at runtime.
 > For an example of such usage, see
-> [the dynamic example](https/examples/dynamic.eg.ts).
+> [the dynamic example](https://github.com/paritytech/capi/blob/main/examples/dynamic.eg.ts).
 
 ## `sync`ing
 
