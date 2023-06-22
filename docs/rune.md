@@ -16,28 +16,18 @@ presence**. You can think of it as Capi's query builder API.
 
 ```ts
 import { polkadot } from "@capi/polkadot"
-import { Scope } from "capi"
 
 const firstTenEntries = polkadot.System.Account.entries({ limit: 10 })
 
-const scope = new Scope()
-
-firstTenEntries.run(scope) // `Promise<AccountInfo>`
+firstTenEntries.run() // `Promise<AccountInfo>`
 ```
 
 There are three key steps in this example:
 
 1. We create a rune named `firstTenEntries`. This is a description of what we
    want, not the actual result. Network interaction has yet to occur.
-2. We instantiate a `Scope`, which will serve as a cache for future requests.
-3. We execute the `firstTenEntries` Rune, which gives a promise resolving to
+2. We execute the `firstTenEntries` Rune, which gives a promise resolving to
    `AccountInfo`
-
-## Scope
-
-The explicit passing of scope disarms a common foot gun: improper cache
-management. By being explicit about the scope... TODO: finish once scope API
-cleaned up
 
 ## Composition
 

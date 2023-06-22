@@ -3,6 +3,7 @@ capi
 clsx
 easyops
 extrinsics
+micropayments
 paritytech
 peaceiris
 solovay

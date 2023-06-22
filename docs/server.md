@@ -87,11 +87,8 @@ Let's say we've defined our `main.js` as follows.
 
 ```js
 import { polkadotDev } from "@capi/polkadot-dev"
-import { Scope } from "capi"
 
-const accountKeys = await polkadotDev.System.Account
-  .keys({ limit: 10 })
-  .run(new Scope())
+const accountKeys = await polkadotDev.System.Account.keys({ limit: 10 }).run()
 ```
 
 Running `capi serve -- node main.js` will first start the Capi server and then
@@ -113,12 +110,11 @@ Now we can import from `@capi/polkadot`, both during development and production.
 ```diff
 - import { polkadotDev } from "@capi/polkadot-dev"
 + import { polkadot } from "@capi/polkadot"
-  import { Scope } from "capi"
 
 - const accountKeys = await polkadotDev.System.Account
 + const accountKeys = await polkadot.System.Account
     .keys({ limit: 10 })
-    .run(new Scope())
+    .run()
 ```
 
 ### Development Users

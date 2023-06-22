@@ -23,7 +23,7 @@ one can access other important APIs, such as that of storage, extrinsic
 building, block and event retrieval and more.
 
 ```ts
-const block = await myChain.block(new Scope()).run()
+const block = await myChain.block().run()
 ```
 
 The generated chain rune also exposes pallet-specific containers of
