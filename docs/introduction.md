@@ -1,12 +1,15 @@
+---
+slug: /
+---
+
 # Introduction
 
 Capi is a framework for crafting interactions with Substrate chains. It consists
-of a development server and fluent API, which facilitates multistep, multichain
+of a development server and fluent API, which facilitates multichain
 interactions without compromising either performance or ease of use.
 
 The remainder of this page focuses on the impetus for this initiative. If you
-wish to dive into usage docs, check out
-[the "Getting Started" guide](/docs/getting_started/overview.md).
+wish to dive into usage docs, skip to [the next section](/docs/setup.md).
 
 ## Background
 
@@ -23,16 +26,15 @@ solution to avoiding this trade-off.
 
 ## The Capi Approach
 
-Capi interactions are defined via Runes, which are declarative, portable and
-strongly-typed building blocks for describing client-chain interactions
-(including [XCM](https://github.com/paritytech/xcm-format)essaging). **Runes
-enable potentially-complex interactions to be folded into their most minimal and
-parallelized form, so that Capi developers need not think about redundancy and
-timing**.
+Capi interactions are defined as ["Runes"](/docs/rune.md), which are
+declarative, portable and strongly-typed building blocks for describing
+client-chain interactions. **Runes enable potentially-complex interactions to be
+folded into their most minimal and parallelized form, so that Capi developers
+need not think about redundancy and timing**.
 
 ## Future Considerations
 
-The Capi approach is meant to accommodate new technical possibilities––as they
+The design of Capi is meant to accommodate new technical possibilities––as they
 are devised––without requiring effort from developers. **Perhaps we will want
 to...**
 

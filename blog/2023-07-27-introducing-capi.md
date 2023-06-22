@@ -1,7 +1,7 @@
 ---
 slug: introducing-capi
 title: Introducing Capi
-authors: [harry]
+authors: [harry, t6]
 ---
 
 TODO: an introduction post

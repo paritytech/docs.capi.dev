@@ -1,19 +1,39 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   tutorialSidebar: [
+    "introduction",
     {
-      type: "doc",
-      id: "introduction",
+      type: "category",
+      label: "Setup",
+      link: {
+        type: "doc",
+        id: "setup/index",
+      },
+      items: [
+        "setup/development",
+        "setup/build_tool_integration",
+        "setup/nets",
+      ],
     },
     {
       type: "category",
-      label: "Getting Started",
+      label: "Basics",
+      link: { type: "doc", id: "basics/index" },
       items: [
-        "getting_started/overview",
-        "getting_started/setup",
-        "getting_started/server",
-        "getting_started/first_steps",
-        "getting_started/import_mapping",
+        "basics/rune",
+        "basics/blocks",
+        "basics/storage",
+        "basics/extrinsics",
+      ],
+    },
+    "types",
+    {
+      type: "category",
+      label: "Rune",
+      link: { type: "doc", id: "rune/index" },
+      items: [
+        "rune/subclasses",
+        "rune/rxjs",
       ],
     },
   ],
