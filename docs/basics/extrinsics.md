@@ -4,17 +4,15 @@ At the heart of any extrinsic is some call data. Let's first create some call
 data to represent one of the most common runtime operations: a balance transfer.
 
 > Note: these examples assume there are two
-> [test users](/docs/server.md#development-users) in scope (`alexa` and
-> `billy`).
+> [test users](./development#development-users) in scope (`alexa` and `billy`).
 
 ```ts
 import { polkadot } from "@capi/polkadot"
 
-const call = polkadot.Balances
-  .transfer({
-    value: 12345n,
-    dest: billy.address,
-  })
+const call = polkadot.Balances.transfer({
+  value: 12345n,
+  dest: billy.address,
+})
 ```
 
 Now we must decide what to do with this call data. In most cases, you'll want to

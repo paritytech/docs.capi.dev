@@ -1,3 +1,7 @@
+---
+slug: /
+---
+
 # Introduction
 
 Capi is a framework for crafting interactions with Substrate chains. It consists

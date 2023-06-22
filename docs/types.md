@@ -70,6 +70,7 @@ type E2 =
   | { type: "X"; value: A }
   | { type: "Y"; value: [B, C] }
   | { type: "Z"; d: D }
+​
 ```
 
 </td></tr></table>

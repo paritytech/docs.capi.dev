@@ -1,53 +1,7 @@
-# Setup
-
-## Installation
-
-NPM-install `capi` and `ts-node`.
-
-> Not applicable to Deno users
-
-```sh
-npm i capi ts-node
-```
-
-## CLI
-
-You may also want to add Capi to your scripts/tasks for convenience.
-
-`package.json`
-
-```diff
-{
-  // ...
-  "scripts": {
-    // ...
-+   "capi": "capi"
-  }
-}
-```
-
-> Deno users can reference the CLI via the `deno.land/x` distribution URL.
->
-> `deno.jsonc`
->
-> ```diff
-> {
->   // ...
->   "tasks": {
->     // ...
-> +   "capi": "deno run -r -A https://deno.land/x/capi/main.ts"
->   }
-> }
-> ```
-
-## `nets.ts`
+# Nets
 
 Create a `nets.ts` file. This file will describe all the networks with which you
 wish to interact.
-
-> Note: you can forgo this setup if your app determines target chain at runtime.
-> For an example of such usage, see
-> [the dynamic example](/examples/dynamic.eg.ts).
 
 Import `net`.
 

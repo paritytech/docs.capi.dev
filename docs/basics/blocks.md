@@ -3,7 +3,7 @@
 ## Latest Finalized Block Hash
 
 ```ts
-const blockHash = await chain.blockHash()
+const blockHash = await chain.blockHash().run()
 ```
 
 ## Latest Finalized Block
@@ -12,6 +12,7 @@ const blockHash = await chain.blockHash()
 const block = await chain
   .blockHash()
 + .block()
+  .run()
 ```
 
 ## Reference A Specific Block
@@ -22,6 +23,7 @@ declare const hash: string
 const block = await blockHash
   .blockHash(hash)
   .block()
+  .run()
 ```
 
 ## Block Extrinsics
@@ -31,6 +33,7 @@ const block = await blockHash
   .blockHash()
   .block()
   .extrinsics()
+  .run()
 ```
 
 > Note: the `extrinsics` decodes the extrinsics in accordance with the given
@@ -44,4 +47,5 @@ const block = await blockHash
   .blockHash()
   .block()
   .events()
+  .run()
 ```

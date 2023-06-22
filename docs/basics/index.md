@@ -1,16 +1,15 @@
-# Chain Rune
+# Basics
 
 Let's say we want to work with the chain corresponding to the following net
 spec.
 
-```ts
+```ts title="nets.ts"
 export const myChain = net.ws({ url: "..." })
 ```
 
-You would import the generated API via its `@capi/`-prefixed kebab-cased name.
-For this particular example (`myChain`), you would import like so.
-
-`main.ts`
+After syncing, you would import the generated API via its `@capi/`-prefixed
+kebab-cased name. For this particular example (`myChain`), you would import like
+so.
 
 ```ts
 import { myChain } from "@capi/my-chain"

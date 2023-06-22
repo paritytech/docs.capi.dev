@@ -31,15 +31,11 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/paritytech/docs.capi.dev/tree/main/docs/",
+          routeBasePath: "/"
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/paritytech/docs.capi.dev/tree/main/blog/",
         },
         theme: {
           customCss: require.resolve("./custom.css"),
@@ -79,6 +75,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      additionalLanguages: ["bash", "rust"],
       },
     },
 }
