@@ -20,7 +20,7 @@ const block = await chain
 ```ts
 declare const hash: string
 
-const block = await blockHash
+const block = await chain
   .blockHash(hash)
   .block()
   .run()
@@ -29,7 +29,7 @@ const block = await blockHash
 ## Block Extrinsics
 
 ```ts
-const block = await blockHash
+const block = await chain
   .blockHash()
   .block()
   .extrinsics()
@@ -43,7 +43,7 @@ const block = await blockHash
 ## Block Events
 
 ```ts
-const block = await blockHash
+const block = await chain
   .blockHash()
   .block()
   .events()

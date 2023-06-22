@@ -30,8 +30,8 @@ const sidebars = {
     {
       type: "category",
       label: "Rune",
+      link: { type: "doc", id: "rune/index" },
       items: [
-        "rune/introduction",
         "rune/subclasses",
         "rune/rxjs",
       ],

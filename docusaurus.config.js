@@ -1,7 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/github")
+const lightCodeTheme = require("prism-react-renderer/themes/vsLight")
 const darkCodeTheme = require("prism-react-renderer/themes/vsDark")
 // oceanicNext
 
@@ -31,8 +31,10 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
+          sidebarCollapsible: false,
+          breadcrumbs: false,
           editUrl: "https://github.com/paritytech/docs.capi.dev/tree/main/docs/",
-          routeBasePath: "/"
+          routeBasePath: "/",
         },
         blog: {
           showReadingTime: true,
@@ -53,29 +55,29 @@ const config = {
           alt: "Capi Logo",
           src: "img/logo.svg",
         },
-        items: [{
-          type: "doc",
-          docId: "introduction",
-          position: "left",
-          label: "Docs",
-        }, {
-          href: "https://github.com/paritytech/capi/tree/main/examples",
-          label: "Examples",
-          position: "left",
-        }, {
-          to: "/blog",
-          label: "Blog",
-          position: "right",
-        }, {
-          href: "https://github.com/paritytech/capi",
-          label: "GitHub",
-          position: "right",
-        }],
+        items: [
+          {
+            href: "https://github.com/paritytech/capi/tree/main/examples",
+            label: "Examples",
+            position: "left",
+          },
+          {
+            to: "/blog",
+            label: "Blog",
+            position: "left",
+          },
+          {
+            href: 'https://github.com/paritytech/capi',
+            position: 'right',
+            className: 'header-github-link',
+            'aria-label': 'GitHub repository',
+          },
+        ],
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-      additionalLanguages: ["bash", "rust"],
+        additionalLanguages: ["bash", "rust"],
       },
     },
 }

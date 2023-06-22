@@ -1,4 +1,4 @@
-# Rune Subclasses
+# Subclasses
 
 Rune enables fluent APIs by facilitating the use of Rune subclasses. Throughout
 the introduction, we made use of a number of Rune subclasses, including ones
@@ -6,7 +6,7 @@ built-in to Rune (such as `ValueRune` and `FnRune`) and some defined by Capi
 (such as `ChainRune` and `PalletRune`).
 
 The base `Rune` class has only a few, core methods like `.run()` and `.iter()`,
-so as to not clutter up the methods of subclasses. Most convenience methods for
+so as to not clutter the members of subclasses. Most convenience methods for
 manipulating runes are placed on subclasses like `ValueRune`. For this reason,
 many Rune APIs will default to making `ValueRune`s (such as `Rune.constant`).
 

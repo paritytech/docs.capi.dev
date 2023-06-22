@@ -45,7 +45,7 @@ az.subscribe((value) => {
 ```ts
 /* Rune */
 
-import { Rune, Scope } from "capi"
+import { Rune } from "capi"
 import { delay } from "https://deno.land/std@0.127.0/async/mod.ts"
 
 // Some kind of event source; this might correspond to, say, new blocks from a given chain
@@ -59,7 +59,7 @@ const ay = a.map((value) => delay(500).then(() => `${value}.y`)) // a0.y, a1.y, 
 const az = Rune.tuple([ax, ay])
 
 const start = Date.now()
-for await (const value of az.iter(new Scope())) {
+for await (const value of az.iter()) {
   console.log(Date.now() - start, value)
 }
 
@@ -150,7 +150,7 @@ ab2.subscribe((value) => {
 ```ts
 /* Rune */
 
-import { Rune, Scope } from "capi"
+import { Rune } from "capi"
 import { delay } from "https://deno.land/std@0.127.0/async/mod.ts"
 
 const a = timer(1000).map((n) => `a${n}`) // a0, a1, a2, ...
@@ -160,7 +160,7 @@ const b = timer(1500).map((n) => `b${n}`) // b0, b1, b2, ...
 const ab = Rune.tuple([a, b])
 
 const start = Date.now()
-for await (const value of ab.watch()) {
+for await (const value of ab.iter()) {
   console.log(Date.now() - start, value)
 }
 
@@ -294,7 +294,7 @@ const bc = Rune.tuple([b, c])
 const allTogetherNow = Rune.tuple([ab, bc])
 
 const start = Date.now()
-for await (const value of allTogetherNow.iter(new Scope())) {
+for await (const value of allTogetherNow.iter()) {
   console.log(Date.now() - start, value)
 }
 
