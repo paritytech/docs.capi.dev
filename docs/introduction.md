@@ -9,7 +9,7 @@ of a development server and fluent API, which facilitates multichain
 interactions without compromising either performance or ease of use.
 
 The remainder of this page focuses on the impetus for this initiative. If you
-wish to dive into usage docs, skip to [the next section](/docs/setup.md).
+wish to dive into usage docs, skip to [the next section](/setup).
 
 ## Background
 
@@ -26,11 +26,11 @@ solution to avoiding this trade-off.
 
 ## The Capi Approach
 
-Capi interactions are defined as ["Runes"](/docs/rune.md), which are
-declarative, portable and strongly-typed building blocks for describing
-client-chain interactions. **Runes enable potentially-complex interactions to be
-folded into their most minimal and parallelized form, so that Capi developers
-need not think about redundancy and timing**.
+Capi interactions are defined as ["Runes"](/basics/rune), which are declarative,
+portable and strongly-typed building blocks for describing client-chain
+interactions. **Runes enable potentially-complex interactions to be folded into
+their most minimal and parallelized form, so that Capi developers need not think
+about redundancy and timing**.
 
 ## Future Considerations
 
