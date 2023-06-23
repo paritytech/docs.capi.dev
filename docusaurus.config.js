@@ -22,7 +22,11 @@ const config = {
     locales: ["en"],
   },
   themes: [
-    [require.resolve("@easyops-cn/docusaurus-search-local"), { hashed: true }],
+    [require.resolve("@easyops-cn/docusaurus-search-local"), {
+      hashed: true,
+      docsRouteBasePath: "/",
+      highlightSearchTermsOnTargetPage: true,
+    }],
   ],
   presets: [
     [
@@ -67,10 +71,10 @@ const config = {
             position: "left",
           },
           {
-            href: 'https://github.com/paritytech/capi',
-            position: 'right',
-            className: 'header-github-link',
-            'aria-label': 'GitHub repository',
+            href: "https://github.com/paritytech/capi",
+            position: "right",
+            className: "header-github-link",
+            "aria-label": "GitHub repository",
           },
         ],
       },
