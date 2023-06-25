@@ -36,6 +36,15 @@ const sidebars = {
         "rune/rxjs",
       ],
     },
+    {
+      type: "category",
+      label: "FAQ",
+      link: { type: "doc", id: "faq/index" },
+      items: [
+        "faq/why-capi-dev",
+        "faq/why-deno",
+      ],
+    },
   ],
 }
 
