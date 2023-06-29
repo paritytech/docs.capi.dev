@@ -31,5 +31,5 @@ approach is that it allows the codegen to be treated like any other dependency.
 In a traditional codegen approach, the codegen is run as a separate
 build/install step and imported like project code, not library code. This
 creates friction, and – importantly – means that the codegen output is baked
-separately into each library, so if multiple libraries are using same chain, the
-codegen output will not be deduplicated, bloating bundle sizes.
+separately into each library, so if multiple libraries are using the same chain,
+the codegen output will not be deduplicated, bloating bundle sizes.
