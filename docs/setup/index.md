@@ -80,4 +80,7 @@ package additions would be as follows:
  }
 ```
 
+If you're using Node, run `npm install` (or the equivalent with your package
+manager of choice).
+
 > In the case of Deno projects, syncing will update the `import_map.json`.
