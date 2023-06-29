@@ -4,7 +4,7 @@ slug: /
 
 # Introduction
 
-> [Announcing Capi v0.1.0-gamma.0](/blog/2023/07/29/v0.1.0-gamma.0)
+> [Announcing Capi v0.1.0-gamma.0](/blog/2023/06/29/v0.1.0-gamma.0)
 
 Capi is a TypeScript framework for crafting interactions with Substrate chains.
 It consists of a development server and fluent API, which facilitates multichain
