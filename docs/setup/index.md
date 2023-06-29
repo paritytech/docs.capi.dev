@@ -80,7 +80,15 @@ package additions would be as follows:
  }
 ```
 
+> In the case of Deno projects, syncing will update the `import_map.json`.
+
 If you're using Node, run `npm install` (or the equivalent with your package
 manager of choice).
 
-> In the case of Deno projects, syncing will update the `import_map.json`.
+## Use Your Chain-Specific API
+
+```ts
+import { polkadot } from "@capi/polkadot"
+
+const accounts = await polkadot.System.Account.entries({ limit: 10 }).run()
+```
