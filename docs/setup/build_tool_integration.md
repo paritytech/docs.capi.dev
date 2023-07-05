@@ -23,6 +23,23 @@ To recap:
 - `CAPI_SERVER`: the URL of the running Capi server
 - `CAPI_TARGET`: the `--target` with which the Capi server was instantiated
 
+## Parcel
+
+Configure your `.parcelrc` file to transform `node_modules/**/Deno.node.js` with
+the `parcel-transformer-capi` plugin.
+
+```json
+{
+  "extends": "@parcel/config-default",
+  "transformers": {
+    "node_modules/**/Deno.node.js": [
+      "parcel-transformer-capi",
+      "@parcel/transformer-js"
+    ]
+  }
+}
+```
+
 ## Vite
 
 Configure your development task such that it instantiates the Capi server and
