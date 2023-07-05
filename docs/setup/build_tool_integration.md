@@ -85,7 +85,7 @@ Configure your development task such that it instantiates the Capi server and
 passes in your Parcel development command.
 
 ```sh
-capi serve --target dev -- parcel serve
+capi serve --target dev -- parcel serve [entrypoint]
 ```
 
 Next, configure your `.parcelrc` file to transform
