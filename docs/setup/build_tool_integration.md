@@ -88,23 +88,15 @@ passes in your Parcel development command.
 capi serve --target dev -- parcel serve [entrypoint]
 ```
 
-Next, configure your `.parcelrc` file to transform
-`node_modules/**/Deno.node.js` with the `parcel-transformer-capi` plugin.
+Next, configure your `.parcelrc` file to use the `parcel-transformer-capi`
+plugin.
 
 ```json
 {
   "extends": "@parcel/config-default",
   "transformers": {
-    "node_modules/**/Deno.node.js": [
-      "@ryanleecode/parcel-transformer-capi",
-      "@parcel/transformer-js"
-    ],
-    "node_modules/**/detectServer.js": [
-      "@ryanleecode/parcel-transformer-capi",
-      "@parcel/transformer-js"
-    ],
-    "node_modules/**/detectConnect.js": [
-      "@ryanleecode/parcel-transformer-capi",
+    "node_modules/**/*.js": [
+      "parcel-transformer-capi",
       "@parcel/transformer-js"
     ]
   }
