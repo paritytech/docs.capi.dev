@@ -96,7 +96,15 @@ Next, configure your `.parcelrc` file to transform
   "extends": "@parcel/config-default",
   "transformers": {
     "node_modules/**/Deno.node.js": [
-      "parcel-transformer-capi",
+      "@ryanleecode/parcel-transformer-capi",
+      "@parcel/transformer-js"
+    ],
+    "node_modules/**/detectServer.js": [
+      "@ryanleecode/parcel-transformer-capi",
+      "@parcel/transformer-js"
+    ],
+    "node_modules/**/detectConnect.js": [
+      "@ryanleecode/parcel-transformer-capi",
       "@parcel/transformer-js"
     ]
   }
