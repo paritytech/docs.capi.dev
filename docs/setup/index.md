@@ -4,9 +4,9 @@
 
 Let's briefly touch on the Capi usage lifecycle at a high level.
 
-1. In Node workspaces, we install Capi (not applicable to Deno workspaces).
-2. We define our "net specs", a file which exports descriptions of what chains
-   we're targeting.
+1. In Node projects, we install Capi (not applicable to Deno projects).
+2. We define our "net specs", a file which exports descriptions (i.e. net specs)
+   of what chains we're targeting.
 3. Whenever we update our net specs, we "sync." This updates your manifest
    (usually a `package.json` or `import_map.json`) with the Capi-generated
    dependencies.
