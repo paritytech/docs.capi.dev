@@ -33,7 +33,17 @@ const sidebars = {
       link: { type: "doc", id: "rune/index" },
       items: [
         "rune/subclasses",
-        "rune/rxjs",
+        "rune/interop",
+        {
+          type: "category",
+          label: "Advanced",
+          link: { type: "doc", id: "rune/advanced/index" },
+          items: [
+            "rune/advanced/timing",
+            "rune/advanced/custom-runes",
+            "rune/advanced/runes-vs-observables",
+          ],
+        },
       ],
     },
     {
