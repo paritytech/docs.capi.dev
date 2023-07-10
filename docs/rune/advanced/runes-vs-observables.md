@@ -1,12 +1,12 @@
-# Comparison to RxJS
+# Runes vs Observables
 
 ## Runes of a Feather Update Together
 
 Runes are similar to RxJS-style observables, in that they are lazy collections
 of multiple values. However, there is an important difference between runes and
-observables – namely, that runes maintain consistency by retaining information
-about the sources of updates. This is perhaps best illustrated by a series of
-examples.
+observables – namely, that runes maintain [consistency](/rune/advanced/timing)
+by retaining information about the sources of updates. This is perhaps best
+illustrated by a series of examples.
 
 First, let's look at a derived query based on one event source in both RxJS and
 Rune.
