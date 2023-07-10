@@ -1,6 +1,6 @@
-# Nets
+# Net Specs
 
-Create a `nets.ts` file. This file will describe all the networks with which you
+Your net spec file (usually `nets.ts`) describes all the networks with which you
 wish to interact.
 
 Import `net`.
@@ -155,5 +155,5 @@ export const polkadot = net.ws({
 })
 ```
 
-We'll dig into this in [the next section](/setup/development), where we'll cover
-making use of the Capi development server.
+We'll dig into this in [the next section](/setup/development_nets), where we'll
+cover making use of the Capi development server.

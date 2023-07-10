@@ -4,7 +4,7 @@ At the heart of any extrinsic is some call data. Let's first create some call
 data to represent one of the most common runtime operations: a balance transfer.
 
 > Note: these examples assume there are two
-> [test users](/setup/development#development-users) in scope (`alexa` and
+> [test users](/setup/development_nets#development-users) in scope (`alexa` and
 > `billy`).
 
 ```ts

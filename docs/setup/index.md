@@ -1,5 +1,19 @@
 # Setup
 
+## Lifecycle
+
+Let's briefly touch on the Capi usage lifecycle at a high level.
+
+1. In Node workspaces, we install Capi (not applicable to Deno workspaces).
+2. We define our "net specs", a file which exports descriptions of what chains
+   we're targeting.
+3. Whenever we update our net specs, we "sync." This updates your manifest
+   (usually a `package.json` or `import_map.json`) with the Capi-generated
+   dependencies.
+
+During development, we may also use Capi to launch and test against ephemeral
+networks, but more on this [later](./development_nets).
+
 ## Installation
 
 NPM-install `capi` (not applicable for Deno users).
@@ -52,7 +66,7 @@ import { net } from "capi/nets"
 export const polkadot = net.ws({ url: "wss://rpc.polkadot.io" })
 ```
 
-This file is covered more in depth in [the `nets.ts` section](./nets).
+This file is covered more in depth in [the `nets.ts` section](./net_specs).
 
 > Note: you can forgo this setup if your app determines target chain at runtime.
 > For an example of such usage, see
