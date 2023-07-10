@@ -4,9 +4,9 @@
 
 NPM-install `capi` (not applicable for Deno users).
 
-> Note: The **minimum required Node version is 20** due to the
+> Note: The minimum supported Node version is 20, as we require the
 > [Web Crypto API](https://nodejs.org/docs/latest-v20.x/api/webcrypto.html#web-crypto-api)
-> being marked as stable rather than experimental.
+> be accessible from `globalThis.crypto` for the sake of browser compatibility.
 
 ```sh
 npm i capi
