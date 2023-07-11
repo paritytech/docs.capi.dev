@@ -1,8 +1,8 @@
-# Introduction
+# Rune
+
+## What Is Rune?
 
 Rune is the basis for Capi's fluent query builder API.
-
-## Why?
 
 Rune facilitates obtaining correct results when working with multiple
 interrelated subscriptions, which arise from cross-chain interactions.

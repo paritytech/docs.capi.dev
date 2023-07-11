@@ -28,11 +28,11 @@ solution to avoiding this trade-off.
 
 ## The Capi Approach
 
-Capi interactions are defined as ["Runes"](/basics/rune), which are declarative,
-portable and strongly-typed building blocks for describing client-chain
-interactions. **Runes enable potentially-complex interactions to be folded into
-their most minimal and parallelized form, so that Capi developers need not think
-about redundancy and timing**.
+Capi interactions are defined as ["Runes"](/basics/rune_primer), which are
+declarative, portable and strongly-typed building blocks for describing
+client-chain interactions. **Runes enable potentially-complex interactions to be
+folded into their most minimal and parallelized form, so that Capi developers
+need not think about redundancy and timing**.
 
 ## Future Considerations
 
