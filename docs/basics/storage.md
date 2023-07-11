@@ -40,7 +40,7 @@ To access the value at a specific block hash, specify the block hash string as
 the second arguments of `value`.
 
 ```ts
-const now = polkadot.System.Account.value(publicKey, blockHash)
+const accountInfo = polkadot.System.Account.value(publicKey, blockHash)
 ```
 
 ## "N" Maps
