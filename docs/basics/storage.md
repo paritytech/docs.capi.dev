@@ -19,6 +19,10 @@ To access the value at a specific block hash, specify `undefined` and the block
 hash string as the arguments of `value`. Otherwise, leave these two parameters
 blank.
 
+```ts
+const now = polkadot.Timestamp.Now.value(undefined, blockHash)
+```
+
 ## Maps
 
 ```ts
@@ -34,6 +38,10 @@ accountInfo satisfies ValueRune<
 
 To access the value at a specific block hash, specify the block hash string as
 the second arguments of `value`.
+
+```ts
+const now = polkadot.System.Account.value(publicKey, blockHash)
+```
 
 ## "N" Maps
 
@@ -63,3 +71,22 @@ accountEntries satisfies Rune<
 
 We can also supply a starting key and/or a partial key should we want to further
 zero in on specific values.
+
+```ts
+declare const start: Uint8Array // a public key
+
+const accountEntries = await polkadot.System.Account.entries({
+  limit: 10,
+  start,
+})
+```
+
+To access the entries at a specific block hash, specify the block hash string as
+the second arguments of `entries`.
+
+```ts
+const accountEntries = await polkadot.System.Account.entries(
+  { limit: 10 },
+  blockHash,
+)
+```

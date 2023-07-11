@@ -1,10 +1,14 @@
 # Rune
 
-Rune is the basis for Capi's fluent query builder API. Rune facilitates
-obtaining correct results when working with multiple interrelated subscriptions,
-which arise from cross-chain interactions. Additionally, Rune abstracts away how
-queries are executed, allowing developers to focus on defining the data they
-want to access.
+## What Is Rune?
+
+Rune is the basis for Capi's fluent query builder API.
+
+Rune facilitates obtaining correct results when working with multiple
+interrelated subscriptions, which arise from cross-chain interactions.
+
+Additionally, Rune abstracts away how queries are executed, allowing developers
+to focus on defining the data they want to access.
 
 ## Basic Examples
 
