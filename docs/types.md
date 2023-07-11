@@ -149,7 +149,7 @@ const J = XcmV1Junction.Parachain(1)
 ```
 
 These factories accept both resolved JS values and (unresolved) Runes (covered
-in [a previous section](/basics/rune)).
+in [a previous section](/basics/rune_primer)).
 
 ```ts
 const one = Rune.constant(1)

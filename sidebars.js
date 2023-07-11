@@ -20,7 +20,7 @@ const sidebars = {
       label: "Basics",
       link: { type: "doc", id: "basics/index" },
       items: [
-        "basics/rune",
+        "basics/rune_primer",
         "basics/blocks",
         "basics/storage",
         "basics/extrinsics",
