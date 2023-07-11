@@ -71,7 +71,7 @@ The signature of the `accountInfo` Rune is as follows.
 ```ts
 ValueRune<
   AccountInfo | undefined, // the `T` type parameter, the main type
-  ConnectionError | ServerError | $.ScaleError // the `U` type parameter, what has been unhandled
+  ConnectionError | ServerError | $.ShapeError // the `U` type parameter, what has been unhandled
 >
 ```
 
@@ -93,6 +93,6 @@ In this example, the `accountInfo` Rune now has the following type.
 ```ts
 ValueRune<
   AccountInfo | undefined | "the fallback",
-  ConnectionError | $.ScaleError
+  ConnectionError | $.ShapeError
 >
 ```
