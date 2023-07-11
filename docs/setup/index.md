@@ -20,6 +20,7 @@ You may also want to add Capi to your scripts/tasks for convenience.
 
 ```diff
 {
++ "type": "module",
   // ...
   "scripts": {
     // ...
