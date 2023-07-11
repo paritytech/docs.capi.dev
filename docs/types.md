@@ -7,7 +7,7 @@ types may remain consistent across chains, many may differ. On one chain,
 (hypothetical) chain, perhaps `AccountData` describes non-fungible assets,
 reputation, linked accounts or something else entirely. Capi's codegen outputs
 TypeScript-idiomatic equivalents of the Rust-declared types, along with
-utilities such as object and variant factories, type guards and runtime
+utilities such as object and variant factories, type guards and
 [shapes](https://github.com/paritytech/subshape). This reduces the friction of
 targeting a Rust-defined environment from your JavaScript environment. It also
 ensures optimal type safety!
