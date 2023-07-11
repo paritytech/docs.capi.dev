@@ -28,7 +28,7 @@ const accountInfo = polkadot.System.Account.value(publicKey)
 
 accountInfo satisfies ValueRune<
   AccountInfo | undefined,
-  ConnectionError | ServerError | $.ScaleError
+  ConnectionError | ServerError | $.ShapeError
 >
 ```
 
@@ -57,7 +57,7 @@ const accountEntries = await polkadot.System.Account.entries({
 
 accountEntries satisfies Rune<
   [Uint8Array, AccountInfo][],
-  ConnectionError | ServerError | $.ScaleError
+  ConnectionError | ServerError | $.ShapeError
 >
 ```
 

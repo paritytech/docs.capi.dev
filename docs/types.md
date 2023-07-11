@@ -7,10 +7,10 @@ types may remain consistent across chains, many may differ. On one chain,
 (hypothetical) chain, perhaps `AccountData` describes non-fungible assets,
 reputation, linked accounts or something else entirely. Capi's codegen outputs
 TypeScript-idiomatic equivalents of the Rust-declared types, along with
-utilities such as object and variant factories, type guards and runtime
-[scale-ts](https://github.com/paritytech/scale-ts) codecs. This reduces the
-friction of targeting a Rust-defined environment from your JavaScript
-environment. It also ensures optimal type safety!
+utilities such as object and variant factories, type guards and
+[shapes](https://github.com/paritytech/subshape). This reduces the friction of
+targeting a Rust-defined environment from your JavaScript environment. It also
+ensures optimal type safety!
 
 ## Conversion Table
 
@@ -172,8 +172,9 @@ if (RuntimeEvent.isContracts(event)) {
 
 ## Codecs
 
-The `$`-prefixed, camel-cased type name is actually a `scale-ts` codec. This
-codec can be used for many use cases.
+The `$`-prefixed, camel-cased type name is actually a
+[`subShape`](https://github.com/paritytech/subshape) "shape". This codec can be
+used for many use cases.
 
 For instance, we may want to perform runtime validation of some untrusted data.
 
@@ -207,5 +208,5 @@ const appRouter = t.router({
 })
 ```
 
-> Note: scale-ts codecs are supported natively by tRPC for typing and
-> validation.
+> Note: [shapes](https://github.com/paritytech/subshape) are supported natively
+> by tRPC for typing and validation.
