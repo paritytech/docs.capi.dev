@@ -10,9 +10,9 @@ const sidebars = {
         id: "setup/index",
       },
       items: [
-        "setup/development",
+        "setup/net_specs",
+        "setup/development_nets",
         "setup/build_tool_integration",
-        "setup/nets",
       ],
     },
     {
