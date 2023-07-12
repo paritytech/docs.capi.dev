@@ -25,7 +25,7 @@ capi serve -- <your-command-here>
 This is useful for executing development scripts. For example:
 
 ```ts title="nets.ts"
-import { bins, nets } from "capi/nets"
+import { bins, net } from "capi/nets"
 
 const bin = bins({ polkadot: ["polkadot", "v0.9.38"] })
 
@@ -55,7 +55,7 @@ To avoid needing to replace import statements between development and
 production, we can specify `targets` in the `nets.ts` file.
 
 ```ts title="nets.ts"
-import { bins, nets } from "capi/nets"
+import { bins, net } from "capi/nets"
 
 const bin = bins({ polkadot: ["polkadot", "v0.9.38"] })
 

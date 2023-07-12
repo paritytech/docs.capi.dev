@@ -66,6 +66,9 @@ doc for future users.
 import webpack from "webpack"
 
 export default {
+  externals: {
+    'node:fs': {},
+  },
   plugins: [
     new webpack.DefinePlugin({
       process: {
