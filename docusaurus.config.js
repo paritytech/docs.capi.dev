@@ -37,7 +37,7 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           sidebarCollapsible: false,
           breadcrumbs: false,
-          editUrl: "https://github.com/paritytech/docs.capi.dev/tree/main/docs/",
+          editUrl: "https://github.com/paritytech/docs.capi.dev/tree/main/",
           routeBasePath: "/",
         },
         blog: {
