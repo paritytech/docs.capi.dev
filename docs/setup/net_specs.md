@@ -1,7 +1,7 @@
 # Net Specs
 
-Your net spec file (usually `nets.ts`) describes all the networks with which you
-wish to interact.
+Your net spec file, `nets.ts`, describes all the networks with which you wish to
+interact.
 
 Import `net`.
 
