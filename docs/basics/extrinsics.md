@@ -63,8 +63,8 @@ const sent = polkadot.Balances
 
 The resulting `ExtrinsicStatusRune` contains a wide range of methods:
 
-- `dbgStatuses`: console logs transaction statuses as they're received
-- `statuses`: accepts a callback, to be called with transaction statuses as
+- `dbgStatus`: console logs transaction statuses as they're received
+- `transactionStatuses`: accepts a callback, to be called with transaction statuses as
   they're received
 - `inBlock`: gives us the `inBlock` hash
 - `inBlockEvents`: gives us the `inBlock` events
