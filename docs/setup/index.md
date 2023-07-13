@@ -14,6 +14,19 @@ Let's briefly touch on the Capi usage lifecycle at a high level.
 During development, we may also use Capi to launch and test against ephemeral
 networks, but more on this [later](./development_nets).
 
+## Requirements
+
+The minimum supported Node version is 20.3.1, as Capi requires the standard
+[Web Crypto API](https://nodejs.org/docs/latest-v20.x/api/webcrypto.html#web-crypto-api).
+To use Capi in previous major versions of Node, you can shim `globalThis.crypto`
+as follows.
+
+```ts
+globalThis.crypto = require("node:crypto").webcrypto
+```
+
+> Deno-based Capi projects require the latest v1.x Deno release.
+
 ## Installation
 
 NPM-install `capi` (not applicable for Deno users).
@@ -22,24 +35,9 @@ NPM-install `capi` (not applicable for Deno users).
 npm i capi
 ```
 
-<details>
-<summary>Node Version Support </summary>
-<br />
-
-The minimum supported Node version is 20.3.1, as Capi requires the standard
-[Web Crypto API](https://nodejs.org/docs/latest-v20.x/api/webcrypto.html#web-crypto-api).
-
-For previous major versions of Node, you can shim `globalThis.crypto`:
-
-```ts
-globalThis.crypto = require("node:crypto").webcrypto
-```
-
-</details>
-
 ## CLI
 
-You may also want to add Capi to your scripts/tasks for convenience.
+You may want to add Capi to your scripts/tasks for convenience.
 
 `package.json`
 
