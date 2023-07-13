@@ -18,9 +18,20 @@ networks, but more on this [later](./development_nets).
 
 NPM-install `capi` (not applicable for Deno users).
 
-> Note: The minimum supported Node version is 20, as we require the
-> [Web Crypto API](https://nodejs.org/docs/latest-v20.x/api/webcrypto.html#web-crypto-api)
-> be accessible from `globalThis.crypto` for the sake of browser compatibility.
+> Note: The minimum supported Node version is 20.3.1, as Capi requires the
+> standard [Web Crypto API](https://nodejs.org/docs/latest-v20.x/api/webcrypto.html#web-crypto-api).
+
+<details>
+<summary>Shimming Web Crypto API</summary>
+<br />
+
+For previous major versions of Node, you can shim `globalThis.crypto`:
+
+```ts
+globalThis.crypto = require("node:crypto").webcrypto
+```
+
+</details>
 
 ```sh
 npm i capi
