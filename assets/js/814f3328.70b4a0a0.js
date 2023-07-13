@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_capi_dev_2=self.webpackChunkdocs_capi_dev_2||[]).push([[535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Capi v0.1.0-gamma.0","permalink":"/blog/2023/06/29/v0.1.0-gamma.0"}]}')}}]);

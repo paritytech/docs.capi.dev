@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_capi_dev_2=self.webpackChunkdocs_capi_dev_2||[]).push([[533],{8017:e=>{e.exports=JSON.parse('{"permalink":"/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
