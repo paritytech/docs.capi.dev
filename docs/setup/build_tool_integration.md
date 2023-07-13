@@ -81,3 +81,27 @@ export default {
   ],
 }
 ```
+
+## Parcel
+
+Configure your development task such that it instantiates the Capi server and
+passes in your Parcel development command.
+
+```sh
+capi serve --target dev -- parcel serve [entrypoint]
+```
+
+Next, configure your `.parcelrc` file to use the `parcel-transformer-capi`
+plugin.
+
+```json
+{
+  "extends": "@parcel/config-default",
+  "transformers": {
+    "node_modules/**/*.js": [
+      "parcel-transformer-capi",
+      "@parcel/transformer-js"
+    ]
+  }
+}
+```
