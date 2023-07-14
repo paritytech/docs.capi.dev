@@ -16,16 +16,16 @@ networks, but more on this [later](./development_nets).
 
 ## Requirements
 
-The minimum supported Node version is 20.3.1, as Capi requires the standard
-[Web Crypto API](https://nodejs.org/docs/latest-v20.x/api/webcrypto.html#web-crypto-api).
-To use Capi in previous major versions of Node, you can shim `globalThis.crypto`
-as follows.
+### Web Crypto API
+
+Capi requires the standard
+[Web Crypto API](https://nodejs.org/docs/latest-v20.x/api/webcrypto.html#web-crypto-api)
+(Node v20.3.1 and above). To use Capi in previous major versions of Node, you
+can shim `globalThis.crypto` as follows.
 
 ```ts
 globalThis.crypto = require("node:crypto").webcrypto
 ```
-
-> Deno-based Capi projects require the latest v1.x Deno release.
 
 ## Installation
 
